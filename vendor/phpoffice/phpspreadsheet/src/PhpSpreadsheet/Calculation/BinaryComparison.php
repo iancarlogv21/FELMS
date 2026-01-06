@@ -14,15 +14,13 @@ class BinaryComparison
     /**
      * Compare two strings in the same way as strcmp() except that lowercase come before uppercase letters.
      *
-     * @param mixed $str1 First string value for the comparison, expect ?string
-     * @param mixed $str2 Second string value for the comparison, expect ?string
+     * @param null|string $str1 First string value for the comparison
+     * @param null|string $str2 Second string value for the comparison
      */
-    private static function strcmpLowercaseFirst(mixed $str1, mixed $str2): int
+    private static function strcmpLowercaseFirst(?string $str1, ?string $str2): int
     {
-        $str1 = StringHelper::convertToString($str1);
-        $str2 = StringHelper::convertToString($str2);
-        $inversedStr1 = StringHelper::strCaseReverse($str1);
-        $inversedStr2 = StringHelper::strCaseReverse($str2);
+        $inversedStr1 = StringHelper::strCaseReverse($str1 ?? '');
+        $inversedStr2 = StringHelper::strCaseReverse($str2 ?? '');
 
         return strcmp($inversedStr1, $inversedStr2);
     }
@@ -30,15 +28,12 @@ class BinaryComparison
     /**
      * PHP8.1 deprecates passing null to strcmp.
      *
-     * @param mixed $str1 First string value for the comparison, expect ?string
-     * @param mixed $str2 Second string value for the comparison, expect ?string
+     * @param null|string $str1 First string value for the comparison
+     * @param null|string $str2 Second string value for the comparison
      */
-    private static function strcmpAllowNull(mixed $str1, mixed $str2): int
+    private static function strcmpAllowNull(?string $str1, ?string $str2): int
     {
-        $str1 = StringHelper::convertToString($str1);
-        $str2 = StringHelper::convertToString($str2);
-
-        return strcmp($str1, $str2);
+        return strcmp($str1 ?? '', $str2 ?? '');
     }
 
     public static function compare(mixed $operand1, mixed $operand2, string $operator): bool
@@ -51,7 +46,7 @@ class BinaryComparison
             $operand2 = Calculation::unwrapResult($operand2);
         }
 
-        // Use case-insensitive comparison if not OpenOffice mode
+        // Use case insensitive comparaison if not OpenOffice mode
         if (Functions::getCompatibilityMode() != Functions::COMPATIBILITY_OPENOFFICE) {
             if (is_string($operand1)) {
                 $operand1 = StringHelper::strToUpper($operand1);
