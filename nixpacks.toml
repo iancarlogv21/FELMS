@@ -1,2 +1,5 @@
 [variables]
-    PHP_EXTENSIONS = "mongodb, gd"
+    PHP_EXTENSIONS = "mongodb, gd, gmp"
+
+[phases.setup]
+    nixPkgs = ["...", "php82Extensions.gd", "php82Extensions.gmp", "php82Extensions.mongodb"]
