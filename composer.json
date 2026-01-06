@@ -1,7 +1,7 @@
 {
     "require": {
         "php": ">=8.1",
-        "mongodb/mongodb": "^1.21",
+        "mongodb/mongodb": "^1.17",
         "vlucas/phpdotenv": "^5.6",
         "phpmailer/phpmailer": "^6.11",
         "picqer/php-barcode-generator": "^3.2",
@@ -11,7 +11,7 @@
     },
     "config": {
     "platform": {
-        "ext-mongodb": "2.1.4",
+        "ext-mongodb": "1.17.2",
         "ext-gd": "1.0",
         "ext-gmp": "1.0",
         "ext-zip": "1.0"
