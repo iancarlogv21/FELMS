@@ -1,23 +1,18 @@
 {
-    "require": {
-        "php": ">=8.1",
-        "mongodb/mongodb": "^1.17",
-        "vlucas/phpdotenv": "^5.6",
-        "phpmailer/phpmailer": "^6.11",
-        "picqer/php-barcode-generator": "^3.2",
-        "sendgrid/sendgrid": "^8.1",
-        "phpoffice/phpspreadsheet": "^2.1",
-        "guzzlehttp/guzzle": "^7.10"
-    },
-    "config": {
-    "platform": {
-        "ext-mongodb": "1.17.2",
-        "ext-gd": "1.0",
-        "ext-gmp": "1.0",
-        "ext-zip": "1.0"
-    },
+  "require": {
+    "php": ">=8.1",
+    "mongodb/mongodb": "^1.17",
+    "vlucas/phpdotenv": "^5.6",
+    "phpmailer/phpmailer": "^6.11",
+    "picqer/php-barcode-generator": "^3.2",
+    "sendgrid/sendgrid": "7.11.5",
+    "phpoffice/phpspreadsheet": "^2.1",
+    "guzzlehttp/guzzle": "^7.10"
+  },
+  "config": {
+    "optimize-autoloader": true,
     "allow-plugins": {
-        "php-http/discovery": true
+      "php-http/discovery": true
     }
-}
+  }
 }
