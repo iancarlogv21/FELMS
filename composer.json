@@ -1,16 +1,20 @@
 {
     "require": {
         "php": ">=8.1",
-        "ext-mongodb": "*",
-        "mongodb/mongodb": "^1.17",
+        "mongodb/mongodb": "^1.21",
         "vlucas/phpdotenv": "^5.6",
         "phpmailer/phpmailer": "^6.11",
         "picqer/php-barcode-generator": "^3.2",
         "sendgrid/sendgrid": "^8.1",
-        "phpoffice/phpspreadsheet": "^5.1",
+        "phpoffice/phpspreadsheet": "^2.1",
         "guzzlehttp/guzzle": "^7.10"
     },
     "config": {
+        "platform": {
+            "ext-mongodb": "2.1.4",
+            "ext-gd": "1.0",
+            "ext-gmp": "1.0"
+        },
         "allow-plugins": {
             "php-http/discovery": true
         }
