@@ -1,8 +1,6 @@
 FROM php:8.2-apache
 
-# Disable memory limits for Composer during build
-ENV COMPOSER_MEMORY_LIMIT=-1
-
+# Install system dependencies and exact MongoDB extension
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     unzip \
@@ -10,13 +8,11 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb-1.17.2 \
     && docker-php-ext-enable mongodb
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
+# Copy all project files (including the pre-built vendor folder)
 COPY . /var/www/html
 WORKDIR /var/www/html
 
-RUN composer install --no-dev --optimize-autoloader --no-interaction
-
+# Configure Apache port for Render
 RUN sed -i "s/80/\${PORT}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
 
 CMD ["apache2-foreground"]
