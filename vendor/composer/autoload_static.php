@@ -19,11 +19,11 @@ class ComposerStaticInita88052494e3ef471998f4d2231e5c5a1
     );
 
     public static $prefixLengthsPsr4 = array (
-        'Z' =>
+        'Z' => 
         array (
             'ZipStream\\' => 10,
         ),
-        'S' =>
+        'S' => 
         array (
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -36,7 +36,7 @@ class ComposerStaticInita88052494e3ef471998f4d2231e5c5a1
             'SendGrid\\Contacts\\' => 18,
             'SendGrid\\' => 9,
         ),
-        'P' =>
+        'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
@@ -47,27 +47,27 @@ class ComposerStaticInita88052494e3ef471998f4d2231e5c5a1
             'PhpOffice\\PhpSpreadsheet\\' => 25,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
-        'M' =>
+        'M' => 
         array (
             'MongoDB\\' => 8,
             'Matrix\\' => 7,
         ),
-        'J' =>
+        'J' => 
         array (
             'Jean85\\' => 7,
         ),
-        'G' =>
+        'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'GrahamCampbell\\ResultType\\' => 26,
         ),
-        'D' =>
+        'D' => 
         array (
             'Dotenv\\' => 7,
         ),
-        'C' =>
+        'C' => 
         array (
             'Composer\\Pcre\\' => 14,
             'Complex\\' => 8,
@@ -75,120 +75,120 @@ class ComposerStaticInita88052494e3ef471998f4d2231e5c5a1
     );
 
     public static $prefixDirsPsr4 = array (
-        'ZipStream\\' =>
+        'ZipStream\\' => 
         array (
             0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
         ),
-        'Symfony\\Polyfill\\Php81\\' =>
+        'Symfony\\Polyfill\\Php81\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
         ),
-        'Symfony\\Polyfill\\Php80\\' =>
+        'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' =>
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Ctype\\' =>
+        'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'SendGrid\\Stats\\' =>
+        'SendGrid\\Stats\\' => 
         array (
             0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/stats',
         ),
-        'SendGrid\\Mail\\' =>
+        'SendGrid\\Mail\\' => 
         array (
             0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/mail',
         ),
-        'SendGrid\\Helper\\' =>
+        'SendGrid\\Helper\\' => 
         array (
             0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/helper',
         ),
-        'SendGrid\\EventWebhook\\' =>
+        'SendGrid\\EventWebhook\\' => 
         array (
             0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/eventwebhook',
         ),
-        'SendGrid\\Contacts\\' =>
+        'SendGrid\\Contacts\\' => 
         array (
             0 => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/contacts',
         ),
-        'SendGrid\\' =>
+        'SendGrid\\' => 
         array (
             0 => __DIR__ . '/..' . '/sendgrid/php-http-client/lib',
         ),
-        'Psr\\SimpleCache\\' =>
+        'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
-        'Psr\\Log\\' =>
+        'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Http\\Message\\' =>
+        'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Http\\Client\\' =>
+        'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
-        'Picqer\\Barcode\\' =>
+        'Picqer\\Barcode\\' => 
         array (
             0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
         ),
-        'PhpOption\\' =>
+        'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
-        'PhpOffice\\PhpSpreadsheet\\' =>
+        'PhpOffice\\PhpSpreadsheet\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
-        'PHPMailer\\PHPMailer\\' =>
+        'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
-        'MongoDB\\' =>
+        'MongoDB\\' => 
         array (
             0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
         ),
-        'Matrix\\' =>
+        'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
-        'Jean85\\' =>
+        'Jean85\\' => 
         array (
             0 => __DIR__ . '/..' . '/jean85/pretty-package-versions/src',
         ),
-        'GuzzleHttp\\Psr7\\' =>
+        'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' =>
+        'GuzzleHttp\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
         ),
-        'GuzzleHttp\\' =>
+        'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'GrahamCampbell\\ResultType\\' =>
+        'GrahamCampbell\\ResultType\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
-        'Dotenv\\' =>
+        'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'Composer\\Pcre\\' =>
+        'Composer\\Pcre\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/pcre/src',
         ),
-        'Complex\\' =>
+        'Complex\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
         ),
