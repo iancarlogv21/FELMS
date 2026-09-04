@@ -15,16 +15,16 @@ function sendBorrowReceipt(string $recipientEmail, array $receiptData): bool {
     try {
 
         $generator = new BarcodeGeneratorPNG();
-        // ★★★ CHANGE: Reduced X-dim to 1.5 and Height to 40 for smaller barcode
+        // Reduced X-dim to 1.5 and Height to 40 for smaller barcode
         $barcodeImage = $generator->getBarcode($receiptData['barcode_data'], $generator::TYPE_CODE_128, 1.5, 40);
         
         $mail->isSMTP();
-        $mail->Host      = SMTP_HOST;
-        $mail->SMTPAuth  = true;
-        $mail->Username  = SMTP_USERNAME;
-        $mail->Password  = SMTP_PASSWORD;
+        $mail->Host       = SMTP_HOST;
+        $mail->SMTPAuth   = true;
+        $mail->Username   = SMTP_USERNAME;
+        $mail->Password   = SMTP_PASSWORD;
         $mail->SMTPSecure = SMTP_ENCRYPTION;
-        $mail->Port      = SMTP_PORT;
+        $mail->Port       = SMTP_PORT;
 
       
         $mail->setFrom(SENDER_EMAIL, SENDER_NAME);
@@ -42,9 +42,8 @@ function sendBorrowReceipt(string $recipientEmail, array $receiptData): bool {
         $mail->send();
         return true;
     } catch (Exception $e) {
-      
-        // For debugging, you might want to log this error:
-        // error_log("Mailer Error: " . $e->getMessage());
+        // Active error logging to capture Render/SendGrid transmission errors
+        error_log("MAILER ERROR: " . $e->getMessage() . " | Info: " . $mail->ErrorInfo);
         return false;
     }
 }
