@@ -10,17 +10,11 @@ RUN apt-get update && apt-get install -y \
 # Install the official MongoDB PECL extension
 RUN pecl install mongodb && docker-php-ext-enable mongodb
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 # Set working directory to Apache's web root
 WORKDIR /var/www/html
 
-# Copy project files into the container
+# Copy project files (including your local vendor folder) into the container
 COPY . /var/www/html
-
-# Install production dependencies via Composer, ignoring platform checks and skipping scripts
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-scripts
 
 # Expose port 80 for web traffic
 EXPOSE 80
