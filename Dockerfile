@@ -19,8 +19,8 @@ WORKDIR /var/www/html
 # Copy project files into the container
 COPY . /var/www/html
 
-# Install production dependencies via Composer, ignoring platform extension checks
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+# Install production dependencies via Composer, ignoring platform checks and skipping scripts
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-scripts
 
 # Expose port 80 for web traffic
 EXPOSE 80
