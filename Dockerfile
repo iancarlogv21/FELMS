@@ -1,26 +1,25 @@
 FROM php:8.2-apache
 
-# Install system dependencies and OpenSSL (required for MongoDB driver)
+# Install system dependencies required for MongoDB extension and Composer
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     unzip \
     git \
-    && rm -rf /var/lib/apt/lists/*
+    && pecl install mongodb \
+    && docker-php-ext-enable mongodb
 
-# Install the official MongoDB PECL extension
-RUN pecl install mongodb && docker-php-ext-enable mongodb
-
-# Install Composer
+# Install Composer globally
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory to Apache's web root
+# Copy project files into the container web root
+COPY . /var/www/html
 WORKDIR /var/www/html
 
-# Copy project files into the container
-COPY . /var/www/html
+# Install production dependencies
+RUN composer install --no-dev --optimize-autoloader
 
-# Install production dependencies via Composer securely inside the container
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-scripts
+# Configure Apache to listen on Render's dynamic PORT environment variable
+RUN sed -i "s/80/\${PORT}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
 
-# Expose port 80 for web traffic
-EXPOSE 80
+# Start Apache in the foreground
+CMD ["apache2-foreground"]
